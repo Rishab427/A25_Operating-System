@@ -123,3 +123,69 @@ void Safeseq(int P,int R,int processes[P], int avail[R], int maxm[][R],int allot
     pthread_mutex_unlock( & mutex );
   }
 }
+
+int main()
+{
+int i,j;
+int p,r;
+printf("Enter the number of processes\n");
+scanf("%d",&p);
+printf("Enter the number of resources\n");
+scanf("%d",&r);
+int process[p];
+int allocation[p][r];
+int max[p][r];
+int avail[r];
+for(i=0;i<p;i++)
+{
+process[i]=i;
+}
+printf("Enter value for allocation\n");
+for(i=0;i<p;i++)
+    {
+   for(j=0;j<r;j++)
+      {
+        scanf("%d",&allocation[i][j]);
+      }
+     }
+printf("values of allocation is\n");
+for(i=0;i<p;i++)
+    {
+   for(j=0;j<r;j++)
+      {
+        printf("%d ",allocation[i][j]);
+      }
+      printf("\n");
+     }
+printf("Enter the value of max\n");
+for(i=0;i<p;i++)
+    {
+   for(j=0;j<r;j++)
+      {
+        scanf("%d",&max[i][j]);
+      }
+     }
+printf("value of max is\n");
+for(i=0;i<p;i++)
+    {
+   for(j=0;j<r;j++)
+      {
+        printf("%d ",max[i][j]);
+      }
+      printf("\n");
+     }
+printf("Enter the available amount\n");
+for(i=0;i<r;i++)
+{
+scanf("%d",&avail[i]);
+}
+printf("available amount is\n");
+for(i=0;i<r;i++)
+{
+printf("%d \n",avail[i]);
+}
+Safeseq(p,r,process,avail,max,allocation);
+ 
+    return 0;
+}
+
