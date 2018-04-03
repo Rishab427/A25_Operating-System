@@ -30,7 +30,6 @@ void function(int *p)
     pthread_mutex_unlock( & mutex );
     pthread_exit(0);  
 }
-
 void Safeseq(int P,int R,int processes[P], int avail[R], int maxm[][R],int allot[][R])
 {
     int i;
@@ -123,7 +122,6 @@ void Safeseq(int P,int R,int processes[P], int avail[R], int maxm[][R],int allot
     pthread_mutex_unlock( & mutex );
   }
 }
-
 int main()
 {
 int i,j;
